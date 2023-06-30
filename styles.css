@@ -38,3 +38,11 @@ ul.film-list {
 .film-body {
     padding: .7rem;
 }
+
+.btn {
+    padding: .3rem .5rem;
+    margin-top: .5rem;
+    border: 1px solid black;
+    background: transparent;
+    cursor: pointer;
+}

@@ -29,6 +29,7 @@ const renderFilms = (films)=> {
             </div>
             <div class="film-footer">
                 <p class="tickets">Available Tickets: ${film.capacity - film.tickets_sold}</p>
+                <button class="btn btn-buy">Buy Ticket</button>
             </div>    
         </article>
         `
