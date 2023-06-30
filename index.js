@@ -1,7 +1,27 @@
 
 document.addEventListener("DOMContentLoaded", ()=> {
-    getFilms()
-})
+    initialize()
+   
+    document.addEventListener("click", (e) => {
+        const target = e.target.closest(".btn")
+        if(target) {
+            const buy = 1
+            const id = e.target.parentElement.parentElement.parentElement.dataset.id
+            const ticketsCount = e.target.previousElementSibling.firstElementChild.textContent
+            let tickets = parseInt(ticketsCount)
+            tickets = tickets - buy
+            const ticket = e.target.previousElementSibling.firstElementChild
+            ticket.textContent = tickets
+            if(ticket.textContent <= 0) {
+                ticket.textContent = 0
+                const btn = e.target
+                btn.textContent = 'SOLD OUT'
+            }
+        }       
+    })
+
+})  
+
 
 const getFilms = ()=> {
     fetch("http://localhost:3000/films")
@@ -28,8 +48,9 @@ const renderFilms = (films)=> {
                  <p class="film-showtime">SHOWTIME: ${film.showtime}</p>
             </div>
             <div class="film-footer">
-                <p class="tickets">Available Tickets: ${film.capacity - film.tickets_sold}</p>
-                <button class="btn btn-buy">Buy Ticket</button>
+                <p class="tickets">Available Tickets: <span>${film.capacity - film.tickets_sold}</span></p>
+                <button class="btn btn-buy">
+                BUY TICKET</button>
             </div>    
         </article>
         `
@@ -37,3 +58,6 @@ const renderFilms = (films)=> {
     });
 }
 
+const initialize = () => {
+    getFilms()
+}
