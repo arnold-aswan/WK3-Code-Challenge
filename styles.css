@@ -14,11 +14,25 @@ svg {
 
 body {
     font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(96.2deg, rgb(255, 230, 112) 10.4%, rgb(255, 100, 100) 43.8%, rgb(0, 93, 219) 105.8%);
 }
 
-.films {
-    margin: 4rem 2rem;
+.container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 2rem;
+    margin: 2rem 3rem;
 }
+
+.selected {
+    margin: 0 4rem 0 0;
+}
+.aside-film1 {
+    max-width: 23rem;
+    border: 1px solid black;
+}
+
+
 
 ul.film-list {
     list-style: none;
@@ -31,11 +45,14 @@ ul.film-list {
     max-width: 15rem;
     border: 1px solid black;
 }
+.poster img {
+    cursor: pointer;
+}
 
 .film-body {
     display: flex;
     flex-direction: column;
-    gap: .8rem;
+    gap: .5rem;
 }
 
 .film-footer, 
@@ -43,10 +60,27 @@ ul.film-list {
     padding: .7rem;
 }
 
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
 .btn {
     padding: .3rem .5rem;
     margin-top: .5rem;
     border: 1px solid black;
     background: transparent;
     cursor: pointer;
+}
+.btn.btn-buy {
+    background: black;
+    color: white;
+}
+.btn.btn-delete {
+    background: #e63946;
+    color: white;
+    border: none;
+}
+.sold-out .btn-buy {
+    background: transparent;
+    color: black;
 }
