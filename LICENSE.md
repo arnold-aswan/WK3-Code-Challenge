@@ -1,1 +1,1 @@
-Arnold Aswani &#169; 2023
+Arnold Aswani &#169; 2023.
