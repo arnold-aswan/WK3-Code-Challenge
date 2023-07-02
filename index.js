@@ -29,16 +29,17 @@ document.addEventListener("DOMContentLoaded", ()=> {
     document.addEventListener("click", (e) => {
         const target = e.target.closest(".btn-delete")
         const id = e.target.parentElement.parentElement.parentElement.parentElement.dataset.id
+        const film = e.target.parentElement.parentElement.parentElement.parentElement
         if(target) {
+            film.remove()
             deleteFilm(id)
-            initialize()
         }
     })
 
     // Replace film on the right side
     document.addEventListener("click", (e) => {
         const target = e.target.closest(".poster")
-        const id = e.target.parentElement.parentElement.dataset.id
+        const id = target.parentElement.parentElement.dataset.id
         if(target) {
             getSelectedFilm(id)
         } 
@@ -63,7 +64,7 @@ const renderFilms = (films)=> {
         li.innerHTML = `
         <article class="film-card">
             <div class="poster">
-                <img src="${film.poster}" alt="">
+                <img src="${film.poster}" alt="poster">
             </div>
             <div class="film-body">
                 <h3 class="filmTitle">${film.title}</h3>
@@ -97,8 +98,8 @@ const renderSelectedFilm = (films)=> {
     const aside = document.querySelector(".selected")
 
     aside.innerHTML = `
-    <article class="film1-card">
-            <div class="poster">
+        <article class="film1-card">
+            <div class="aside-poster">
                 <img src="${films.poster}" alt="">
             </div>
             <div class="film-body">
