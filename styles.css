@@ -17,6 +17,19 @@ body {
     background: linear-gradient(96.2deg, rgb(255, 230, 112) 10.4%, rgb(255, 100, 100) 43.8%, rgb(0, 93, 219) 105.8%);
 }
 
+header {
+    width: fit-content;
+    margin: 2rem auto;
+}
+.head {
+    color: white;
+}
+.sub {
+    color: black;
+    background: #b8c0ff;
+    padding: .5rem;
+    border-radius: .5rem;
+}
 .container {
     display: grid;
     grid-template-columns: 60% 40%;
@@ -27,12 +40,9 @@ body {
 .selected {
     margin: 0 4rem 0 0;
 }
-.aside-film1 {
-    max-width: 23rem;
-    border: 1px solid black;
+.aside-poster {
+    max-width: 24rem;
 }
-
-
 
 ul.film-list {
     list-style: none;
